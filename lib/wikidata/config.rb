@@ -1,3 +1,5 @@
+require 'faraday/net_http'
+
 module Wikidata
   class Config
     class << self
@@ -9,7 +11,8 @@ module Wikidata
     end
 
     @options = {}
-    @faraday = ->(builder) { builder.adapter :excon }
+    Faraday.default_adapter = :net_http
+    @faraday = ->(builder) { builder.adapter :net_http }
     @settings = Hashie::Mash.new(
       YAML.load_file(
         File.expand_path('../../../config/settings.yml', __FILE__)

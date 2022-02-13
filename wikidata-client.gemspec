@@ -17,7 +17,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency("faraday", "~> 2.1")
   s.add_dependency("hashie", "~> 5")
-  s.add_dependency("excon", "~> 0.91")
+  # s.add_dependency("excon", "~> 0.91")
+  s.add_dependency('faraday-net_http')
 
   s.add_development_dependency("rspec", "~> 3.1")
   s.add_development_dependency("webmock", "~> 1.18")

@@ -5,7 +5,7 @@ describe Wikidata do
     { request: { timeout: 10 } }
   }
   let(:builder) {
-    -> (builder) { builder.use :excon }
+    -> (builder) { builder.use :net_http }
   }
   it 'should be configurable' do
     Wikidata.configure do |c|

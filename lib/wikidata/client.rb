@@ -30,7 +30,7 @@ module Wikidata
       Faraday.new(opts) do |faraday|
         faraday.request  :url_encoded
         faraday.response :json, content_type: /\bjson$/
-        Wikidata.faraday.call faraday
+        faraday.adapter :net_http #Wikidata.faraday.call
       end
     end
   end
